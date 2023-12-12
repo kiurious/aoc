@@ -1,3 +1,3 @@
 # Advent of Code Puzzles
 
-Link: ![AOC](https://adventofcode.com)
+Link: [AOC](https://adventofcode.com)
