@@ -103,7 +103,7 @@ function partOne() {
   // return the sum of the ids inside idArray
 
   // Final Sum
-  let sum = idArray.reduce((sum, value) => sum + value, 0);
+  let sum = idArray.reduce((sum, value) => sum + parseInt(value), 0);
   console.log(`Total Sum: ${sum}`);
   return sum;
 }
