@@ -96,15 +96,16 @@ function partOne() {
         idArray.splice(idArray.indexOf(id), 1);
       }
     });
-
-    return idArray;
   });
 
   console.log("idArray: ", idArray);
 
   // return the sum of the ids inside idArray
 
-  return idArray.reduce((sum, value) => sum + value);
+  // Final Sum
+  let sum = idArray.reduce((sum, value) => sum + value, 0);
+  console.log(`Total Sum: ${sum}`);
+  return sum;
 }
 
 console.log(partOne());
