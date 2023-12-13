@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const input = fs.readFileSync("./example1.txt", "utf8");
+const input = fs.readFileSync("./input.txt", "utf8");
 const games = input.trim().split("\n");
 
 const maxRedCubes = 12;
@@ -23,7 +23,7 @@ function partOne() {
       // Add something here tomorrow
       // Example array: [ ' 3 blue, 4 red', ' 1 red, 2 green, 6 blue', ' 2 green\r' ]
       let setSample = set.split(",").map((set) => set.trim());
-      console.log("setSample: ", setSample);
+      // console.log("setSample: ", setSample);
       redCubes = 0;
       greenCubes = 0;
       blueCubes = 0;
@@ -99,8 +99,6 @@ function partOne() {
   });
 
   console.log("idArray: ", idArray);
-
-  // return the sum of the ids inside idArray
 
   // Final Sum
   let sum = idArray.reduce((sum, value) => sum + parseInt(value), 0);
