@@ -7,6 +7,7 @@ const maxRedCubes = 12;
 const maxGreenCubes = 13;
 const maxBlueCubes = 14;
 let idArray = [];
+let invalidGameID = [];
 
 function partOne() {
   // Todo: Edit, remove, add and simplify comments once logic is done.
@@ -60,12 +61,21 @@ function partOne() {
       );
 
       if (redCubes > maxRedCubes) {
+        if (!invalidGameID.includes(gameID)) {
+          invalidGameID.push(gameID);
+        }
         return false;
       }
       if (greenCubes > maxGreenCubes) {
+        if (!invalidGameID.includes(gameID)) {
+          invalidGameID.push(gameID);
+        }
         return false;
       }
       if (blueCubes > maxBlueCubes) {
+        if (!invalidGameID.includes(gameID)) {
+          invalidGameID.push(gameID);
+        }
         return false;
       }
       if (
@@ -78,13 +88,23 @@ function partOne() {
           idArray.push(gameID);
         }
       }
-      console.log("idArray: ", idArray);
+    });
+
+    // remove gameID from idArray if it is in invalidGameID
+    invalidGameID.forEach((id) => {
+      if (idArray.includes(id)) {
+        idArray.splice(idArray.indexOf(id), 1);
+      }
     });
 
     return idArray;
   });
 
-  return values;
+  console.log("idArray: ", idArray);
+
+  // return the sum of the ids inside idArray
+
+  return idArray.reduce((sum, value) => sum + value);
 }
 
 console.log(partOne());
